@@ -1,0 +1,20 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @university.name
+p
+  strong Code:
+  = @university.code
+p
+  strong Logo:
+  = image_tag @university.logo
+
+p
+  strong Data:
+  == @university.pretty_data
+
+= link_to "更新数据", analyze_university_path(@university)
+= link_to 'Edit', edit_university_path(@university)
+'|
+= link_to 'Back', universities_path

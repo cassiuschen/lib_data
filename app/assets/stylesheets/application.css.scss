@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+@import "weui";
+
+body {
+	background-color: #efeff4;
+}

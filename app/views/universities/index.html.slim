@@ -1,0 +1,29 @@
+h1 Listing universities
+
+table
+  thead
+    tr
+      th Name
+      th Code
+      th Logo
+      th
+      th
+      th
+      th Data
+      th
+
+  tbody
+    - @universities.each do |university|
+      tr
+        td = university.name
+        td = university.code
+        td = image_tag university.logo
+        td = link_to 'Show', university
+        td = link_to 'Edit', edit_university_path(university)
+        td = link_to 'Destroy', university, data: { confirm: 'Are you sure?' }, method: :delete
+        td == university.pretty_data
+        td = link_to "更新数据", analyze_university_path(university)
+
+br
+
+= link_to 'New University', new_university_path

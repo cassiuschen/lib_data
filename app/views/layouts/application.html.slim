@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    title
+      = yield :title
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"
+  body(class="#{controller_name} #{action_name} #{'webView' if web_view?}"  ontouchstart)
+    = yield
