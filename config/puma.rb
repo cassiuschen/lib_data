@@ -4,16 +4,16 @@
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum, this matches the default thread size of Active Record.
 #
-threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
-threads threads_count, threads_count
+########threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
+#######threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests, default is 3000.
 #
-port        ENV.fetch("PORT") { 3000 }
+########port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
-environment ENV.fetch("RAILS_ENV") { "development" }
+#######environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
@@ -44,4 +44,29 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # end
 
 # Allow puma to be restarted by `rails restart` command.
+
+
+
+## Old Conf
+# First, you need to change these below to your situation.
+APP_ROOT = '/var/app/lib_data'
+
+# Second, you can choose how many threads that you are going to run at same time.
+if ENV["RAILS_ENV"] == 'production'
+	workers 2
+	threads 2,8
+else
+	workers 2
+	threads 2,4
+end
+
+# Unless you know what you are changing, do not change them.
+bind  "unix://#{APP_ROOT}/tmp/sockets/puma.sock"
+stdout_redirect "#{APP_ROOT}/log/puma.log","#{APP_ROOT}/log/puma.err.log"
+pidfile "#{APP_ROOT}/tmp/pids/puma.pid"
+state_path "#{APP_ROOT}/tmp/pids/puma.state"
+daemonize true
+activate_control_app
+preload_app!
+
 plugin :tmp_restart
