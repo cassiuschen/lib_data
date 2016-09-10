@@ -4,7 +4,7 @@ class UniversitiesController < ApplicationController
   # GET /universities
   # GET /universities.json
   def index
-    @universities = University.all
+    @universities = University.all.sort_by {|u| u.surveys.size * -1}
   end
 
   # GET /universities/1

@@ -1,0 +1,314 @@
+- page_title @university.name + "图书馆"
+= form_tag university_surveys_path, method: :post 
+  // Q1
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | #{@university.name}图书馆的馆舍面积属于以下那个范围？
+    .weui_cells_radio
+      = label_tag :q1_1, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 1万平米以下
+        .weui_cell_ft
+          = radio_button_tag :q1, 1, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q1_2, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 1万平米 ~ 4万平米
+        .weui_cell_ft
+          = radio_button_tag :q1, 2, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q1_3, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 4万平米 ~ 6万平米
+        .weui_cell_ft
+          = radio_button_tag :q1, 3, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q1_4, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 6万平米 ~ 10万平米
+        .weui_cell_ft
+          = radio_button_tag :q1, 4, false,class: "weui_check"
+          span.weui_icon_checked
+  .weui_cells_tips
+    i.weui_icon_info_circle
+    | 一间教室大约50 ~ 60平米，若有多个分馆，馆舍面积指的是所有分馆面积之和。
+
+  // Q2
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | #{@university.name}图书馆有多少纸质图书？
+    .weui_cells_radio
+      = label_tag :q2_1, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 10万册以下
+        .weui_cell_ft
+          = radio_button_tag :q2, 1, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q2_2, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 10万 ~ 100万册
+        .weui_cell_ft
+          = radio_button_tag :q2, 2, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q2_3, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 100万 ~ 500万册
+        .weui_cell_ft
+          = radio_button_tag :q2, 3, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q2_4, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 500万册以上
+        .weui_cell_ft
+          = radio_button_tag :q2, 4, false,class: "weui_check"
+          span.weui_icon_checked
+
+
+  // Q3
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | #{@university.name}图书馆有多少读者可使用的座位？
+    .weui_cells_radio
+      = label_tag :q3_1, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 1000个以下
+        .weui_cell_ft
+          = radio_button_tag :q3, 1, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q3_2, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 1000 ~ 2500个
+        .weui_cell_ft
+          = radio_button_tag :q3, 2, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q3_3, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 2500 ~ 4000个
+        .weui_cell_ft
+          = radio_button_tag :q3, 3, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q3_4, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 4000个以上
+        .weui_cell_ft
+          = radio_button_tag :q3, 4, false,class: "weui_check"
+          span.weui_icon_checked
+
+  // Q4
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | #{@university.name}图书馆每年借出多少本书？
+    .weui_cells_radio
+      = label_tag :q4_1, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 10万册次以下
+        .weui_cell_ft
+          = radio_button_tag :q4, 1, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q4_2, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 10万 ~ 25万册次
+        .weui_cell_ft
+          = radio_button_tag :q4, 2, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q4_3, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 25万 ~ 40万册次
+        .weui_cell_ft
+          = radio_button_tag :q4, 3, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q4_4, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 40万 ~ 100万册次
+        .weui_cell_ft
+          = radio_button_tag :q4, 4, false,class: "weui_check"
+          span.weui_icon_checked
+  .weui_cells_tips
+    i.weui_icon_info_circle
+    | 想想看#{@university.name}有多少学生和老师，你一年借几本书，乘一下？
+
+  // Q5
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | 以下哪些服务#{@university.name}图书馆可以免费提供？
+    .weui_cells_checkbox
+      = label_tag :q5_1, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_1, 1, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 文献传递服务
+      = label_tag :q5_2, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_2, 2, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 馆际互借服务
+      = label_tag :q5_3, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_3, 3, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 座位、讨论室（研究间等）预约
+      = label_tag :q5_4, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_4, 4, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 打印/复印
+      = label_tag :q5_5, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_5, 5, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 多媒体影音室（线下多媒体服务、点播服务等）
+      = label_tag :q5_6, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_6, 6, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 在线阅览
+      = label_tag :q5_7, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_7, 7, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 本校特色数据库
+      = label_tag :q5_8, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q5_8, 8, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 远程（校外）访问图书馆资源
+  .weui_cells_tips
+    i.weui_icon_info_circle
+    | 文献传递指用户所需的文献复制品以有效的方式快递给用户的服务，馆际互借指提交申请后由图书馆出面从其他学校图书馆借来本校没有的书籍资料等。
+
+  // Q6
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | #{@university.name}图书馆2015年一年间用于文献资源购置的费用有多少？
+    .weui_cells_radio
+      = label_tag :q6_1, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 100万以下
+        .weui_cell_ft
+          = radio_button_tag :q6, 1, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q6_2, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 100万 ~ 1000万
+        .weui_cell_ft
+          = radio_button_tag :q6, 2, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q6_3, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 1000万 ~ 4000万
+        .weui_cell_ft
+          = radio_button_tag :q6, 3, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q6_4, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 4000万以上
+        .weui_cell_ft
+          = radio_button_tag :q6, 4, false,class: "weui_check"
+          span.weui_icon_checked
+  .weui_cells_tips
+    i.weui_icon_info_circle
+    | 文献资源包括纸质文献、电子资料、非书文献和其他资料（如模型、字画等）
+
+  // Q7
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | #{@university.name}图书馆有开设信息素养课程或讲座么？
+    .weui_cells_radio
+      = label_tag :q7_1, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 有
+        .weui_cell_ft
+          = radio_button_tag :q7, 1, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q7_2, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 没有
+        .weui_cell_ft
+          = radio_button_tag :q7, 2, false,class: "weui_check"
+          span.weui_icon_checked
+
+  // Q8
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | #{@university.name}图书馆会购买在线期刊数据库并提供给学生免费试用么？
+    .weui_cells_radio
+      = label_tag :q8_1, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 会
+        .weui_cell_ft
+          = radio_button_tag :q8, 1, false,class: "weui_check"
+          span.weui_icon_checked
+      = label_tag :q8_2, class: "weui_cell weui_check_label"
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 不会 / 不知道
+        .weui_cell_ft
+          = radio_button_tag :q8, 2, false,class: "weui_check"
+          span.weui_icon_checked
+
+      
+
+  .weui_btn_area
+    = submit_tag "提交", class: "weui_btn weui_btn_primary"
+
+        
+
+
+
+
+

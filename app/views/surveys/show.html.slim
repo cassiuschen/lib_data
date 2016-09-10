@@ -1,0 +1,22 @@
+.hd
+  h1.page_title
+    | #{@survey.score.to_i}分
+  p.page_desc
+    = @survey.slogan 
+  
+  .weui_btn_area
+    a.weui_btn.weui_btn_primary 分享给好友
+.bd
+  
+  .weui_cells_title
+    | 2015年度数据
+    .right
+      | 本校数据 / 
+      span.mute 北京211大学均值
+  .weui_cells
+    - @university.view_data.each do |i|
+      .weui_cell
+        .weui_cell_bd.weui_cell_primary
+          p = i.keys.first
+        .weui_cell_ft
+          | #{i.values.first}

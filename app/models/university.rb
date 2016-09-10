@@ -1,6 +1,6 @@
 require 'csv'
 class University < ApplicationRecord
-  has_many :surveies
+  has_many :surveys
   mount_uploader :logo, LogoUploader
   mount_uploader :file, CsvUploader
 
@@ -23,7 +23,7 @@ class University < ApplicationRecord
   }
 
   TAILS = {
-    "A1" => "平方米",
+    "A1" => "㎡",
     "A3" => "人",
     "A4.1" => "人",
     "B1" => "元",
@@ -32,7 +32,7 @@ class University < ApplicationRecord
     "B1.3" => "元",
     "B1.4" => "元",
     "B2" => "元",
-    "D" => "册（件）",
+    "D" => "册",
     "D1.1" => "册",
     "D1.2" => "册",
     "E1" => "个",
@@ -65,7 +65,7 @@ class University < ApplicationRecord
     # Begin to import data
     data = {}
     # A1
-    data[@array[1][1].split(" ").first] = get_data.call 2, [8, 12, 15, 18, 21, 24, 27, 30, 33, 36], "to_f"
+    data[@array[1][1].split(" ").first] = get_data.call 1, [8, 12, 15, 18, 21, 24, 27, 30, 33, 36], "to_f"
     # A3
     data[@array[44][1].split(" ").first] = get_data.call 44, [45, 67,68,69], "to_i"
     # A4.1
@@ -91,7 +91,7 @@ class University < ApplicationRecord
     # E1
     data["E1"] = get_data.call 168, [169, 170], "to_i"
     # E1
-    data["E1"] = get_data.call 175, [175], "to_i"
+    data["G1"] = get_data.call 175, [175], "to_i"
 
     self.data = data
     self.save
@@ -100,4 +100,70 @@ class University < ApplicationRecord
   def pretty_data
     data.map {|k,v| TITLES[k] + ": #{v}#{TAILS[k]}"}.join("<br />")
   end
+
+  def view_data
+    data.map {|k,v| {TITLES[k] => "#{v}#{TAILS[k]}"}}
+  end
+
+  def avg_score
+    unless self.surveys.size == 0
+      (self.surveys.sum(&:score) / self.surveys.size).to_i
+    else
+      0
+    end
+  end
 end
+
+
+##
+
+#{
+#  q1: {
+#    1 => 0,
+#    2 => 5,
+#    3 => 10,
+#    4 => 2
+#  },
+#  q2: {
+#    1 => 10,
+#    2 => 5,
+#    3 => 0,
+#    4 => 0
+#  },
+#  q3: {
+#    1 => 2,
+#    2 => 10,
+#    3 => 5,
+#    4 => 0
+#  },
+#  q4: {
+#    1 => 2,
+#    2 => 10,
+#    3 => 5,
+#    4 => 0
+#  },
+#  q5: {
+#    1 => 5,
+#    2 => 5,
+#    3 => 0,
+#    4 => 5,
+#    5 => 5,
+#    6 => 6,
+#    7 => 5,
+#    8 => 5
+#  },
+#  q6: {
+#    1 => 0,
+#    2 => 10,
+#    3 => 2,
+#    4 => 0
+#  },
+#  q7: {
+#    1 => 10,
+#    2 => 0
+#  },
+#  q8: {
+#    1 => 10,
+#    2 => 0
+#  }
+#}

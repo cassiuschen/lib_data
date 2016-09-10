@@ -10,12 +10,28 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require weui_ex
  *= require_self
  */
-
 @import "weui";
 
-body {
-	background-color: #efeff4;
+.uni_logo {
+	img {
+		width: 120px;
+	}
+}
+
+.weui_cells_tips {
+	i {
+		margin-right: 7px;
+
+		&:before {
+			font-size: 18px;
+		}
+	}
+}
+.weui_cells_title {
+	.right {
+		float: right;
+	}
 }

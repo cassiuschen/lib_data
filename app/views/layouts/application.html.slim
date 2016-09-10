@@ -5,9 +5,11 @@ html
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     title
       = yield :title
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+      | 图书馆信息调研
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"
-  body(class="#{controller_name} #{action_name} #{'webView' if web_view?}"  ontouchstart)
-    = yield
+  body(class="#{controller_name} #{action_name}" ontouchstart)
+    .container
+      = yield

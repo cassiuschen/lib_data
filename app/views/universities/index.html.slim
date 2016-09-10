@@ -1,29 +1,24 @@
-h1 Listing universities
-
-table
-  thead
-    tr
-      th Name
-      th Code
-      th Logo
-      th
-      th
-      th
-      th Data
-      th
-
-  tbody
-    - @universities.each do |university|
-      tr
-        td = university.name
-        td = university.code
-        td = image_tag university.logo
-        td = link_to 'Show', university
-        td = link_to 'Edit', edit_university_path(university)
-        td = link_to 'Destroy', university, data: { confirm: 'Are you sure?' }, method: :delete
-        td == university.pretty_data
-        td = link_to "更新数据", analyze_university_path(university)
-
-br
-
-= link_to 'New University', new_university_path
+- page_title "选择大学"
+.panel
+  .hd
+    h1.page_title 选择大学
+  .bd
+    .weui_panel.weui_panel_access
+      .weui_panel_hd 已收录数据的北京211大学列表
+      .weui_panel_bd
+        - for university in @universities
+          = link_to university_surveys_path(university), class: "weui_media_box weui_media_appmsg"
+            .weui_media_hd
+              - if university.logo
+                = image_tag university.logo, class: "weui_media_appmsg_thumb"
+            .weui_media_bd
+              h4.weui_media_title = university.name
+              p.weui_media_desc
+                - if university.surveys.size == 0
+                  | 还没有人完成测试哦！快来试试吧！
+                - else
+                  | 已有 #{university.surveys.size} 人完成测试，平均分 #{university.avg_score} 分
+  .fd
+    .weui_msg
+      .weui_extra_area
+        = link_to '数据来源', about_path
