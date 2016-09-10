@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  timeout: 2016-09-10 16:53:28
+  ticket: MyString
+  ticket_timeout: 2016-09-10 16:53:28
+
+two:
+  content: MyString
+  timeout: 2016-09-10 16:53:28
+  ticket: MyString
+  ticket_timeout: 2016-09-10 16:53:28

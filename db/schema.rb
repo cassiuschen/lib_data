@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906132403) do
+ActiveRecord::Schema.define(version: 20160910085328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20160906132403) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.string   "file"
+  end
+
+  create_table "wechat_tokens", force: :cascade do |t|
+    t.string   "content"
+    t.datetime "timeout"
+    t.string   "ticket"
+    t.datetime "ticket_timeout"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_foreign_key "surveys", "universities"
