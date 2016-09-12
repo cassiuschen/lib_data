@@ -30,7 +30,7 @@ App =
   setupWechat: ->
     data = App.getWechatSignData()
     wx.config
-      debug: true
+      debug: false
       appId: "wx80262218f360ebe9"
       timestamp: data.timestamp
       nonceStr: 'wx80262218f360ebe9'
