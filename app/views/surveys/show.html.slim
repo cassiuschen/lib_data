@@ -1,3 +1,6 @@
+- page_title "测一测你有多了解#{@university.name}图书馆~"
+#wechat_preview
+  = image_tag @university.logo
 .hd
   h1.page_title
     | #{@survey.score.to_i}分
@@ -5,7 +8,7 @@
     = @survey.slogan 
   
   .weui_btn_area
-    a.weui_btn.weui_btn_primary 分享给好友
+    = link_to '重新开始', university_surveys_path(@university), class: 'weui_btn weui_btn_primary'
 .bd
   
   .weui_cells_title
@@ -29,6 +32,7 @@
 
 
 javascript:
+  /*
   wx.onMenuShareTimeline({
     title: '测一测你有多了解#{@university.name}图书馆~', // 分享标题
     link: 'http://lib.cassiuschen.com/universities/#{@university.code}/surveys', // 分享链接
@@ -59,4 +63,4 @@ javascript:
     cancel: function () { 
         // 用户取消分享后执行的回调函数
     }
-  });
+  });*/
