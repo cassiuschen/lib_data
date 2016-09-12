@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'static/about', as: :about
+  get 'about' => 'static#about', as: :about
 
   resources :universities do
   	resources :surveys

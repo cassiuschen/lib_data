@@ -3,7 +3,7 @@ module ApplicationHelper
     if is_root
       title_str = title
     else
-      title_str = "#{title} - "
+      title_str = "#{title}"
     end
 
     content_for :title do
