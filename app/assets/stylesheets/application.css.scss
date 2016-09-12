@@ -14,7 +14,7 @@
  *= require_self
  */
 @import "weui";
-
+	
 .uni_logo {
 	img {
 		width: 120px;
@@ -33,5 +33,15 @@
 .weui_cells_title {
 	.right {
 		float: right;
+	}
+}
+
+#wechat_preview {
+	width: 0;
+	height: 0;
+	img {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
 	}
 }

@@ -53,11 +53,11 @@ APP_ROOT = '/var/app/lib_data'
 
 # Second, you can choose how many threads that you are going to run at same time.
 if ENV["RAILS_ENV"] == 'production'
-	workers 2
-	threads 2,8
+  workers 2
+  threads 2,8
 else
-	workers 2
-	threads 2,4
+  workers 2
+  threads 2,4
 end
 
 # Unless you know what you are changing, do not change them.

@@ -42,7 +42,7 @@ App =
 window.App = App
 
 $(document).on 'page:change', ->
-  window.App.setupWechat()
+  #window.App.setupWechat()
 
 $ ->
-  window.App.setupWechat()
+  #window.App.setupWechat()
