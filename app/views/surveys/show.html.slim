@@ -50,7 +50,7 @@ javascript:
 
   wx.onMenuShareAppMessage({
     title: '测一测你有多了解#{@university.name}图书馆~', // 分享标题
-    desc: '我在#{@university.name}测试中获得了#{survey.score.to_i}分，你呢？', // 分享描述
+    desc: '我在#{@university.name}测试中获得了#{@survey.score.to_i}分，你呢？', // 分享描述
     link: 'http://lib.cassiuschen.com/universities/#{@university.code}/surveys', // 分享链接
     imgUrl: '#{image_url @university.logo}', // 分享图标
     type: 'link', // 分享类型,music、video或link，不填默认为link

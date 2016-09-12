@@ -102,7 +102,7 @@ class University < ApplicationRecord
   end
 
   def view_data
-    data.map {|k,v| {TITLES[k] => "#{v}#{TAILS[k]}"}}
+    data.delete_if {|k,v| v.to_i == 0}.map {|k,v| {TITLES[k] => "#{v}#{TAILS[k]}"}}
   end
 
   def avg_score
