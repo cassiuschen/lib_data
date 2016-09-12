@@ -8,7 +8,7 @@ class Survey < ApplicationRecord
       if v.class == String
         @score += self.university.right_answer[k][v]
       elsif v.class == Array
-        v.each {|i| @score += self.university.right_answer[k][i.to_s]}
+        v.each {|i| @score += self.university.right_answer[k][i.to_s] unless !(self.university.right_answer[k])}
       end
     end
     self.score = @score > 100 ? 100 : @score

@@ -16,9 +16,11 @@ class SurveysController < ApplicationController
       q5: [],
       q6: params[:q6] || 0,
       q7: params[:q7] || 0,
-      q8: params[:q8] || 0
+      q8: params[:q8] || 0,
+      q9: []
     }
     (1..8).each {|i| @result[:q5] << i if params["q5_#{i}".to_sym] }
+    (1..10).each {|i| @result[:q9] << i if params["q9_#{i}".to_sym] }
     @survey = @university.surveys.create(answer: @result)
     redirect_to university_survey_path(@university, @survey)
   end

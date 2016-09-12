@@ -301,6 +301,87 @@
           = radio_button_tag :q8, 2, false,class: "weui_check"
           span.weui_icon_checked
 
+  // Q9
+  .weui_cells
+    .weui_cell
+      .weui_cell_bd.weui_cell_primary
+        p
+          | 你在#{@university.name}图书馆使用过以下哪些服务？
+    .weui_cells_checkbox
+      = label_tag :q9_1, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_1, 1, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 文献传递服务
+      = label_tag :q9_2, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_2, 2, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 馆际互借服务
+      = label_tag :q9_3, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_3, 3, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 座位、讨论室（研究间等）预约
+      = label_tag :q9_4, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_4, 4, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 打印/复印
+      = label_tag :q9_5, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_5, 5, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 多媒体影音室（线下多媒体服务、点播服务等）
+      = label_tag :q9_6, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_6, 6, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 在线阅览
+      = label_tag :q9_7, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_7, 7, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 本校特色数据库
+      = label_tag :q9_8, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_8, 8, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 远程（校外）访问图书馆资源
+      = label_tag :q9_9, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_9, 9, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 借/还书
+      = label_tag :q9_10, class: "weui_cell weui_check_label"
+        .weui_cell_hd
+          = check_box_tag :q9_10, 10, false,class: "weui_check"
+          i.weui_icon_checked
+        .weui_cell_bd.weui_cell_primary
+          p
+            | 自习
+  .weui_cells_tips
+    i.weui_icon_info_circle
+    | 放心，本题不计入成绩
+
       
 
   .weui_btn_area
