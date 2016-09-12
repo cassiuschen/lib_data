@@ -20,3 +20,26 @@
           p = i.keys.first
         .weui_cell_ft
           | #{i.values.first}
+
+#toast style="display: none;"
+  .weui_mask_transparent
+  .weui_toast
+    i.weui_icon_toast
+    p.weui_toast_content 已完成
+
+
+javascript:
+  wx.onMenuShareTimeline({
+    title: '测一测你有多了解#{@university.name}图书馆~', // 分享标题
+    link: 'http://lib.cassiuschen.com/universities/#{@university.code}/surveys', // 分享链接
+    imgUrl: '#{image_url @university.logo}', // 分享图标
+    success: function () { 
+      $('#toast').css("display", "block");
+      setTimeout(function(){
+        $("#toast").fadeOut(500);
+      }, 700);
+    },
+    cancel: function () { 
+        // 用户取消分享后执行的回调函数
+    }
+  });
